@@ -6,6 +6,10 @@ description: Learn how to upgrade your Kerno agent.
 
 To upgrade your Kerno agent to the latest version, follow these steps:
 
+{% hint style="info" %}
+If you’ve installed Kerno using the Kubernetes-only mode, you can upgrade it by re-running the installation command using either [Docker](install-kerno.md#user-content-docker-installation) or the [YAML manifest](install-kerno.md#user-content-installing-via-manifest-yaml), depending on your setup.
+{% endhint %}
+
 ### **1. Navigate to the Installation Section**
 
 * In the **Kerno dashboard**, click on **Settings** (bottom-left corner).

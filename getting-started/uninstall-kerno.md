@@ -6,6 +6,10 @@ description: Learn how to uninstall Kerno.
 
 Follow these steps to uninstall a cluster from Kerno.
 
+{% hint style="info" %}
+If you installed Kerno in K8s-only mode, follow the uninstall steps for [Docker](install-kerno.md#user-content-uninstalling-kerno-via-docker) or for the [YAML manifest](install-kerno.md#user-content-uninstalling-kerno), depending on your setup.
+{% endhint %}
+
 ### 1. Navigate to the Installation Section
 
 * In the **Kerno dashboard**, click on **Settings** (bottom-left corner).

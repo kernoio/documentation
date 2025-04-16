@@ -44,7 +44,18 @@ The following tables list Kubernetes environments that have been tested with Ker
 | Kubernetes environment | Supported     |
 | ---------------------- | ------------- |
 | EKS                    | Supported     |
+| GKE                    | Supported     |
+| AKS                    | Supported\*   |
+| OKE                    | Supported\*   |
+| Kind                   | Supported\*   |
+| K3s                    | Supported\*   |
+| K3d                    | Supported\*   |
+| K0s                    | Supported\*   |
+| OpenShift              | Supported\*   |
+| Rancher                | Supported\*   |
 | EKS Fargate            | Not Supported |
+
+\*Supported for [K8-only mode](install-kerno.md#k8s-only-mode) installation
 
 ### **Kernel Version**
 

@@ -14,7 +14,7 @@ Kerno is a lightweight observability platform engineered for cloud-native engine
 
 **Keep Control of Your Sensitive Data**: Kerno keeps all sensitive data within your cluster; no data leaves your infrastructure.
 
-**Predictable Pricing**: Kerno is priced per unique component monitored, not based on data volume, so you won't encounter surprise bills as you scale.
+**Predictable Pricing**: Kerno is priced per unique service monitored, not based on data volume, so you won't encounter surprise bills as you scale.
 
 ### **Zero-Code Instrumentation with eBPF**
 
@@ -34,4 +34,4 @@ By leveraging AWS S3, Kerno stores this data cost-effectively while maintaining 
 
 ### **Fair and Predictable Pricing**
 
-Kerno’s architecture enables Kerno to offer a fair, transparent, and predictable pricing model based on the number of monitored components. **Data volumes don't affect your subscription price, so you can scale your monitoring without unexpected costs.**
+Kerno’s architecture enables Kerno to offer a fair, transparent, and predictable pricing model based on the number of monitored components. **Data volumes don't affect your subscription price so that you can scale your monitoring without unexpected costs.**
