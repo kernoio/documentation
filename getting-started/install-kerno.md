@@ -138,10 +138,6 @@ curl -H "x-kerno-api-key: <kerno-api-key>" \
 The manifest contains sensitive information an auth token to be stored as a secret, an installation id so Kerno can uniquely identify the installation, and the API key.
 {% endhint %}
 
-{% hint style="info" %}
-For development environments, add the environment variable `ENVIRONMENT=development` to the Docker command.
-{% endhint %}
-
 Apply the manifest:
 
 ```bash
@@ -156,10 +152,6 @@ curl -H "x-kerno-api-key: <kerno-api-key>" \
      https://ingestion.kerno.io/k8s-bridge/installation/yaml && \
 kubectl apply -f kerno-installation.yaml
 ```
-
-{% hint style="info" %}
-For development installations, use the URL: [`https://ingestion.dev.kerno.io/k8s-bridge/installation/yaml`](https://ingestion.dev.kerno.io/k8s-bridge/installation/yaml).
-{% endhint %}
 
 ### Uninstalling Kerno via YAML Manifest <a href="#user-content-uninstalling-kerno" id="user-content-uninstalling-kerno"></a>
 
