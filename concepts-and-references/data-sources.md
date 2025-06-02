@@ -10,7 +10,7 @@ We're always expanding our coverage. Check out our [public roadmap](https://gith
 
 ### Supported Protocols
 
-Kerno supports tracing of traffic encrypted with the following protocols:
+Kerno supports tracing for the following protocols:
 
 | Protocol | Status    | Notes |
 | -------- | --------- | ----- |
@@ -18,10 +18,11 @@ Kerno supports tracing of traffic encrypted with the following protocols:
 | HTTP 1.1 | Supported |       |
 | HTTP2    | Supported |       |
 | gRPC     | Supported |       |
+| Postgres | Supported |       |
 
 ### Supported Encryption Libraries
 
-Kerno supports tracing of traffic encrypted with the following libraries:
+Kerno supports tracing traffic encrypted with the following libraries:
 
 | Libraries | Status    | Notes                                                                                                                                                                                                                 |
 | --------- | --------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
