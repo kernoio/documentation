@@ -264,7 +264,7 @@ Make sure to keep your API key secret by storing it securely outside of the file
 
 ## Install Kerno Using Docker
 
-Use the Kerno Docker to automate the installation process. The key benefit of this method is that **Kerno will automatically provision the required object storage and apply the correct access policies for you.**&#x20;
+Use the Kerno Docker to automate the installation process. The key benefit of this method is that **Kerno will automatically provision the required object storage and apply the correct roles and access policies for you.**&#x20;
 
 ### Prerequisites
 
