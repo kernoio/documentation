@@ -1,5 +1,6 @@
 ---
 description: This section guides you through setting up Kerno on a local Kubernetes cluster
+hidden: true
 ---
 
 # Install Kerno Locally

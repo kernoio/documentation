@@ -10,29 +10,6 @@ description: >-
 If you encounter issues or have questions, [message us on Slack](https://join.slack.com/t/kerno-community/shared_invite/zt-2tiblmlpx-c05QvbiOEZ_lWUtxECUKWA), and we’ll gladly help.
 {% endhint %}
 
-### **Kubernetes RBAC Permissions**
-
-To install Kerno, you need permission to deploy the following Kubernetes objects.
-
-* **Namespace**
-* **Deployment**&#x20;
-* **DaemonSet**
-* **ConfigMap**
-* **Secret**&#x20;
-* **Service**
-* **ServiceAccount**
-* **ClusterRole**
-* **ClusterRoleBinding**
-
-### **AWS Permissions**
-
-The following AWS permissions are required to deploy Kenro:
-
-* **IAM Role**
-* **Role Policy**
-* **Bucket**
-* **Bucket Policy**
-
 ### **Kubernetes**
 
 Kubernetes `v1.23.0` or higher is required.
@@ -55,7 +32,7 @@ The following tables list Kubernetes environments that have been tested with Ker
 | Rancher                | Supported\*   |
 | EKS Fargate            | Not Supported |
 
-\*Supported for [K8-only mode](install-kerno.md#k8s-only-mode) installation
+\*Supported without a Persistent Object Store
 
 ### **Kernel Version**
 

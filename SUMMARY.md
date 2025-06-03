@@ -6,8 +6,6 @@
 
 * [System Requirements](getting-started/system-requirements.md)
 * [Install Kerno](getting-started/install-kerno.md)
-* [Upgrade Kerno](getting-started/upgrade-kerno.md)
-* [Uninstall Kerno](getting-started/uninstall-kerno.md)
 * [Install Kerno Locally](getting-started/install-kerno-locally.md)
 * [Explore our Sandbox](getting-started/explore-our-sandbox.md)
 
