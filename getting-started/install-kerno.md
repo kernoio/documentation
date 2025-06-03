@@ -4,10 +4,6 @@ description: Learn how to install Kerno on your Kubernetes cluster
 
 # Install Kerno
 
-{% hint style="warning" %}
-We're currently aware of compatibility issues with Docker on Apple M4 machines. For now, if you're installing Kerno using Docker, please use a Mac with an Intel, M1, M2, or M3 chip. We're actively working on a fix and will share updates soon.
-{% endhint %}
-
 Before installing Kerno, please make sure you meet the [requirements](system-requirements.md).
 
 ## Sign up to Kerno
@@ -265,6 +261,10 @@ Make sure to keep your API key secret by storing it securely outside of the file
 ## Install Kerno Using Docker
 
 Use the Kerno Docker to automate the installation process. The key benefit of this method is that **Kerno will automatically provision the required object storage and apply the correct roles and access policies for you.**&#x20;
+
+{% hint style="warning" %}
+We're currently aware of compatibility issues with Docker on Apple M4 machines. For now, if you're installing Kerno using Docker, please use a Mac with an Intel, M1, M2, or M3 chip. We're actively working on a fix and will share updates soon.
+{% endhint %}
 
 ### Prerequisites
 
