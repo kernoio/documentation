@@ -32,6 +32,12 @@ Then click **Register Cluster** to continue.
 **Note**: You can edit your cluster name later.
 {% endhint %}
 
+{% hint style="warning" %}
+**IMPORTANT**
+
+Your \<API-key> is automatically generated when you install Kerno on a new Cluster. You will have one API Key per cluster. You'll need these key to update and delete Kerno. So make sure you store then securely
+{% endhint %}
+
 ## Install Kerno Using Helm
 
 You can install Kerno using the official Helm chart.
@@ -262,10 +268,6 @@ Make sure to keep your API key secret by storing it securely outside of the file
 
 Use the Kerno Docker to automate the installation process. The key benefit of this method is that **Kerno will automatically provision the required object storage and apply the correct roles and access policies for you.**&#x20;
 
-{% hint style="warning" %}
-We're currently aware of compatibility issues with Docker on Apple M4 machines. For now, if you're installing Kerno using Docker, please use a Mac with an Intel, M1, M2, or M3 chip. We're actively working on a fix and will share updates soon.
-{% endhint %}
-
 ### Prerequisites
 
 #### **Kubernetes RBAC Permissions**
@@ -331,8 +333,156 @@ To install, a gcloud login must be present on the host machine
 
 <figure><img src="../.gitbook/assets/Kerno GCP Installation.png" alt=""><figcaption><p>Kerno GCP Installation</p></figcaption></figure>
 
-{% hint style="info" %}
-Your `<API-key>` is automatically generated when you create your account. Each account has a single key, so store it securely.
-{% endhint %}
-
 If you encounter issues or have questions, [message us on Slack](https://join.slack.com/t/kerno-community/shared_invite/zt-2tiblmlpx-c05QvbiOEZ_lWUtxECUKWA), and we’ll gladly help.
+
+## Troubleshoot your Docker installation.
+
+&#x20;These are some issues you might encounter when installing Kerno with Docker and how you can fix them.
+
+<details>
+
+<summary>Docker doesn't have enough memory</summary>
+
+If your Docker doesn't have enough memory to install Kerno, you'll see the following error.
+
+```bash
+docker run -it --pull always \
+-e AWS_REGION=<region> \
+-e AWS_PROFILE=<profile> \
+-e CLUSTER_NAME=<cluster_name> \
+-e K4_KEY=<kerno_api_key> \
+-v ~/.aws:/root/.aws \
+public.ecr.aws/fyck.io/installer:main
+
+
+main: Pulling from fyck.io/installer
+Digest: sha256:ac79ed7e599bea1bec142fe418a1f1081787b3f537182d02eb35939f8c48d890
+Status: Image is up to date for public.ecr.aws/fyck.io/installer:main
+INFO: Installation target set to production
+Interactive mode detected. Confirmation prompts will be used
+
+Getting installation information from Kerno...
+Installation information obtained
+
+Setting Kubernetes context...
+Using AWS_REGION [<profile>] and CLUSTER_NAME [<cluster_name>] to set context
+
+Initializing Pulumi stack for Kerno installation...
+
+/entrypoint.sh: line 114:    36 Segmentation fault      pulumi stack select -c "$K4_ID"b
+```
+
+**To resolve this issue:**
+
+1. Open **Docker Desktop**
+2. Go to **Settings**, then **Resources**
+3. Increase the allocated memory (add 2–4 GB, depending on your workload)
+
+**If the issue continues:**
+
+1. Remove all containers created from the installer image
+2. Delete the installer image
+3. Re-run the installation command
+
+</details>
+
+<details>
+
+<summary>Cloud profile isn't being detected</summary>
+
+If you see an error like the one below, it means the selected profile cannot be used to connect to the cluster.
+
+```bash
+
+Diagnostics:
+  pulumi:pulumi:Stack (installer-ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667):
+    error: preview failed
+
+  aws:s3:BucketV2 (kerno-samples-ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667):
+    error: Preview failed: 1 error occurred:
+    	* Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: ebbb0a6a-494e-4e36-ab5c-bef7d6978b3b, api error InvalidClientTokenId: The security token included in the request is invalid
+
+  aws:s3:BucketPolicy (kerno-samples-ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667-policy):
+    error: Preview failed: 1 error occurred:
+    	* Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: ebbb0a6a-494e-4e36-ab5c-bef7d6978b3b, api error InvalidClientTokenId: The security token included in the request is invalid
+
+  aws:iam:Role (kerno-samples-role-ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667):
+    error: Preview failed: 1 error occurred:
+    	* Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: ebbb0a6a-494e-4e36-ab5c-bef7d6978b3b, api error InvalidClientTokenId: The security token included in the request is invalid
+
+  aws:iam:RolePolicy (kerno-samples-ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667-policy):
+    error: Preview failed: 1 error occurred:
+    	* Retrieving AWS account details: validating provider credentials: retrieving caller identity from STS: operation error STS: GetCallerIdentity, https response error StatusCode: 403, RequestID: ebbb0a6a-494e-4e36-ab5c-bef7d6978b3b, api error InvalidClientTokenId: The security token included in the request is invalid
+
+    [Pulumi Copilot] Would you like help with these diagnostics?
+    https://app.pulumi.com/kernoio/installer/ab90fbbe-4d72-45ca-a2a7-ecaf8d9bf667/previews/bf99205d-b0f9-4991-a392-bbd95dd9b782?explainFailure
+
+Resources:
+
+There was a problem installing Kerno.
+Please check your installation configuration and try again.
+Should the issue persist, contact the Kerno team for support.
+```
+
+To resolve this issue, make sure you are using the correct profile:
+
+1.  Run:
+
+    ```bash
+    aws sso login --profile <profile>
+    ```
+2.  If the issue persists, try using `assume` to get credentials:
+
+    ```bash
+    assume --export <profile>
+
+    ```
+
+</details>
+
+<details>
+
+<summary>MacOS M4 Installation Issue</summary>
+
+If you're using Docker on Apple M4 machines, you may encounter an error that looks like this:
+
+```bash
+
+Diagnostics:
+  pulumi:pulumi:Stack (installer-36755439-d238-44cd-b3d6-d7384e54ad73):
+    #
+    # A fatal error has been detected by the Java Runtime Environment:
+    #
+    #  SIGILL (0x4) at pc=0x0000ffff9633fc5c, pid=132, tid=133
+    #
+    # JRE version:  (21.0.6+7) (build )
+    # Java VM: OpenJDK 64-Bit Server VM (21.0.6+7-LTS, mixed mode, sharing, tiered, compressed oops, compressed class ptrs, g1 gc, linux-aarch64)
+    # Problematic frame:
+    # j  java.lang.System.registerNatives()V+0 java.base@21.0.6
+    #
+    # No core dump will be written. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+    #
+    # An error report file with more information is saved as:
+    # /pulumi/projects/hs_err_pid132.log
+    [0.038s][warning][os] Loading hsdis library failed
+    #
+    # The crash happened outside the Java Virtual Machine in native code.
+    # See problematic frame for where to report the bug.
+    #
+
+    error: an unhandled error occurred: '/opt/java/openjdk/bin/java -jar installer.jar' exited with non-zero exit code: -1
+
+    [Pulumi Copilot] Would you like help with these diagnostics?
+    https://app.pulumi.com/kernoio/installer/36755439-d238-44cd-b3d6-d7384e54ad73/previews/b1ef6df2-ad48-4219-acec-448f6bcaa863?explainFailure
+
+```
+
+To resolve this issue, first make sure you have the latest version of Docker and Docker Desktop installed. Then, try rerunning the command.
+
+If the issue persists, add the following environment variable to the Kerno installation script and rerun it:
+
+```bash
+-e JAVA_TOOL_OPTIONS="-XX:UseSVE=0"
+```
+
+</details>

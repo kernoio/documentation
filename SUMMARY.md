@@ -11,7 +11,7 @@
 
 ## Organization Setting
 
-* [Create an Organization](organization-setting/create-an-organization.md)
+* [Update an Organization](organization-setting/update-an-organization.md)
 * [Manage Users](organization-setting/manage-users.md)
 * [Manage Cluster](organization-setting/manage-cluster.md)
 

@@ -1,22 +1,10 @@
 ---
-description: Learn how to create and update an organization.
+description: Learn how to update an organization.
 ---
 
-# Create an Organization
+# Update an Organization
 
 An **Organization** in Kerno is the highest-level logical structure and is the foundation for managing all resources and activities within Kerno.
-
-### **Creating an Organization**
-
-When you sign up for Kerno, you will be prompted to create an organization.
-
-Enter a name for your organization in the **Organization Name** field.
-
-Click the **Create Organization** button to complete the process.
-
-{% hint style="info" %}
-**Note**: The organization name will also be used to generate a unique slug (URL identifier) for your organization within Kerno.
-{% endhint %}
 
 ### **Editing Organization Details**
 
