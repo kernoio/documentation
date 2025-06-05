@@ -34,4 +34,4 @@ By leveraging AWS S3, Kerno stores this data cost-effectively while maintaining 
 
 ### **Fair and Predictable Pricing**
 
-Kerno’s architecture enables Kerno to offer a fair, transparent, and predictable pricing model based on the number of monitored components. **Data volumes don't affect your subscription price so that you can scale your monitoring without unexpected costs.**
+Kerno’s architecture enables Kerno to offer a fair, transparent, and predictable pricing model based on the number of nodes. **Data volumes don't affect your subscription price so that you can scale your monitoring without unexpected costs.**
