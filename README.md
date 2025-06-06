@@ -2,7 +2,7 @@
 
 ### What is Kerno?
 
-Kerno is a lightweight observability platform engineered for cloud-native engineering teams. It provides the easiest way for developers and on-call engineers to navigate complex systems, identify critical issues, and resolve them independently without manual instrumentation, steep learning curves, complex configurations, or exorbitant pricing.
+**Kerno is a runtime intelligence platform.** Kerno streams runtime intelligence from pre-production and production into the IDE and integrates deeply with AI code agents to help developers ship 10x faster without breaking things and fix minor issues early before they escalate.
 
 ### **What Makes Kerno Different**
 
@@ -14,7 +14,7 @@ Kerno is a lightweight observability platform engineered for cloud-native engine
 
 **Keep Control of Your Sensitive Data**: Kerno keeps all sensitive data within your cluster; no data leaves your infrastructure.
 
-**Predictable Pricing**: Kerno is priced per unique service monitored, not based on data volume, so you won't encounter surprise bills as you scale.
+**Predictable Pricing**: Kerno is priced per node, not based on data volume, so you won't encounter surprise bills as you scale.
 
 ### **Zero-Code Instrumentation with eBPF**
 
