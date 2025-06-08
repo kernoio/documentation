@@ -335,9 +335,9 @@ To install, a gcloud login must be present on the host machine
 
 If you encounter issues or have questions, [message us on Slack](https://join.slack.com/t/kerno-community/shared_invite/zt-2tiblmlpx-c05QvbiOEZ_lWUtxECUKWA), and we’ll gladly help.
 
-## Troubleshoot your Docker installation.
+## Troubleshoot your Installation.
 
-&#x20;These are some issues you might encounter when installing Kerno with Docker and how you can fix them.
+These are some issues you might encounter when installing Kerno and how you can fix them.
 
 <details>
 
