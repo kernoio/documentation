@@ -335,6 +335,46 @@ To install, a gcloud login must be present on the host machine
 
 If you encounter issues or have questions, [message us on Slack](https://join.slack.com/t/kerno-community/shared_invite/zt-2tiblmlpx-c05QvbiOEZ_lWUtxECUKWA), and we’ll gladly help.
 
+## Upgrade Kerno
+
+Uninstall Kerno using the same method you used to install it (e.g., Helm, Docker)
+
+{% tabs %}
+{% tab title="Helm" %}
+```bash
+helm upgrade --install kerno-agent kerno-dev/agent
+--create-namespace
+--namespace kerno
+--set apiKey="<KERNO_API_KEY>"
+--atomic
+```
+{% endtab %}
+
+{% tab title="Docker" %}
+To upgrade using Docker, run the same command you used to install Kerno.
+{% endtab %}
+{% endtabs %}
+
+## Uninstall Kerno
+
+Uninstall Kerno using the same method you used to install it (e.g., Helm, Docker). Just run the corresponding uninstall command.
+
+{% tabs %}
+{% tab title="Helm" %}
+```
+helm uninstall kerno-agent -n kerno
+```
+{% endtab %}
+
+{% tab title="Docker" %}
+To uninstall using Docker, run the same command you used to install Kerno, but add the uninstall flag.
+
+```shell
+-e UNINSTALL=true \
+```
+{% endtab %}
+{% endtabs %}
+
 ## Troubleshoot your Installation.
 
 These are some issues you might encounter when installing Kerno and how you can fix them.
