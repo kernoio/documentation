@@ -2,6 +2,7 @@
 description: >-
   The Kerno Sandbox is a no-installation, interactive environment that lets you
   explore Kerno’s features with real Kubernetes observability data.
+hidden: true
 ---
 
 # Explore our Sandbox

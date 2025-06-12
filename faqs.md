@@ -32,7 +32,9 @@ Yes. Kerno uses eBPF to observe your systems at the kernel level, which means it
 
 <summary>Does Kerno replace my current observability and APM tools?</summary>
 
-No. Kerno is built specifically for developers. It strips away the noise and gives them just the right context to understand and fix issues fast, without digging through dashboards. It runs alongside your existing observability tools but is tightly integrated into the IDE and your AI code agent to streamline everyday workflows. No extra overhead, no maintenance burden, just actionable runtime context where developers need it.
+No. Kerno is a developer productivity tool.\
+\
+It strips away the noise and gives developers the right context to quickly understand and fix issues without digging through dashboards. It runs alongside your existing observability tools but is tightly integrated into the IDE and your AI code agent to streamline everyday workflows. There is no extra overhead, no maintenance burden, just actionable runtime context where developers need it.
 
 </details>
 
@@ -40,7 +42,7 @@ No. Kerno is built specifically for developers. It strips away the noise and giv
 
 <summary>How does Kerno integrate with my current observability and APM stack?</summary>
 
-Kerno collects its own logs, metrics, traces, events, and system signals—but only a small slice, typically around 1% of what traditional observability tools ingest. Even if some services aren’t instrumented or existing telemetry breaks, Kerno still gathers enough to provide value.
+Kerno collects its own system signals. It analyzes every data point but only stores about 1%. Even if some services aren’t instrumented or existing telemetry breaks, Kerno still gathers what it needs to provide value.
 
 </details>
 
